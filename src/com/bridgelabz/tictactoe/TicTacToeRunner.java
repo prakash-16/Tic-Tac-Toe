@@ -13,7 +13,12 @@ public class TicTacToeRunner {
 		} else {
 			System.out.println("you have chose letter O and computer has got letter X");
 		}
-		tictactoe.showBoard(gameBoard);
+		//tictactoe.showBoard(gameBoard);
+		boolean result = tictactoe.isIndexIsFree(gameBoard, 5);
+		if(result == true) {
+			tictactoe.userMove(gameBoard,5);
+			tictactoe.showBoard(gameBoard);
+		}
 
 	}
 

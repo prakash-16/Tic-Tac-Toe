@@ -32,10 +32,31 @@ public class TicTacToeGame {
 		return user;
 
 	}
-	
+
 	public void showBoard(Character[] gameBoard) {
-		for(i=1;i<4;i++) {
-			System.out.println("|" + gameBoard[i] + "|" + "|" + gameBoard[i+1] + "|" + "|" + gameBoard[i+2] + "|");
+		System.out.println("|" + gameBoard[1] + "|" + "|" + gameBoard[2] + "|" + "|" + gameBoard[3] + "|");
+		System.out.println("|" + gameBoard[4] + "|" + "|" + gameBoard[5] + "|" + "|" + gameBoard[6] + "|");
+		System.out.println("|" + gameBoard[7] + "|" + "|" + gameBoard[8] + "|" + "|" + gameBoard[9] + "|");
+		
+	}
+
+	public boolean isIndexIsFree(Character[] gameBoard, int position) {
+		if (position > 9) {
+			System.out.println("Please enter valid index from (1-9)");
+			return false;
+		}
+		if (gameBoard[position] == ' ') {
+			return true;
+		} else {
+			System.out.println("Index is not free");
+			return false;
+		}
+	}
+
+	public void userMove(Character[] gameBoard, int position) {
+		boolean result = isIndexIsFree(gameBoard, position);
+		if (result == true) {
+			gameBoard[position] = user;
 		}
 	}
 
