@@ -8,11 +8,13 @@ public class TicTacToeGame {
 	Scanner sc = new Scanner(System.in);
 	public char user;
 	public char computer;
+	public int i;
 
-	public void createBoard() {
-		for (int i = 1; i < 10; i++) {
+	public Character[] createBoard() {
+		for (i = 1; i < 10; i++) {
 			gameBoard[i] = ' ';
 		}
+		return gameBoard;
 	}
 
 	public char chooseLetter() {
@@ -22,11 +24,19 @@ public class TicTacToeGame {
 		int result = sc.nextInt();
 		if (result == 1) {
 			user = 'X';
+			computer = 'O';
 		} else {
 			computer = 'O';
+			user = 'X';
 		}
 		return user;
 
+	}
+	
+	public void showBoard(Character[] gameBoard) {
+		for(i=1;i<4;i++) {
+			System.out.println("|" + gameBoard[i] + "|" + "|" + gameBoard[i+1] + "|" + "|" + gameBoard[i+2] + "|");
+		}
 	}
 
 }
