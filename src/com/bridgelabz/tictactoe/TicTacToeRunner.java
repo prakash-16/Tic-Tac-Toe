@@ -57,6 +57,11 @@ public class TicTacToeRunner {
 			if(resultTie == true) {
 				break;
 			}
+			boolean resultCheck = tictactoe.checkOpponent(gameBoard);
+			if(resultCheck == true) {
+				System.out.println("Your opponent can win");
+				break;
+			}
 			k++;
 		}
 		tictactoe.showBoard(gameBoard);
