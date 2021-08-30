@@ -56,7 +56,6 @@ public class TicTacToeGame {
 	public void userMove(Character[] gameBoard) {
 		while (true) {
 			System.out.println("Enter the position to take move :- ");
-			position = sc.nextInt();
 			if (this.isIndexIsFree(gameBoard, position) == true) {
 				break;
 			}
@@ -138,6 +137,12 @@ public class TicTacToeGame {
 			}
 		}
 		return false;
+	}
+	
+	public void addCenter(Character[] gameBoard) {
+		if (this.isIndexIsFree(gameBoard, position) == true) {
+			gameBoard[position] = computer;
+		}
 	}
 	
 	public boolean checkOpponentUser(Character[] gameBoard) {

@@ -72,6 +72,9 @@ public class TicTacToeRunner {
 				else if(tictactoe.isIndexIsFree(gameBoard, 9)) {
 					tictactoe.userMove(gameBoard);
 				}
+				else {
+					tictactoe.addCenter(gameBoard);
+				}
 				break;
 			}
 			k++;
