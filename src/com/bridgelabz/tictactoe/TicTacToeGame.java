@@ -61,4 +61,13 @@ public class TicTacToeGame {
 		gameBoard[position] = user;
 	}
 
+	public String toss() {
+		int tossResult = (int) Math.floor(Math.random() * 10) % 2;
+		if (tossResult == 1) {
+			return "Head";
+		} else {
+			return "Tail";
+		}
+	}
+
 }
