@@ -89,6 +89,14 @@ public class TicTacToeRunner {
 		}
 		tictactoe.showBoard(gameBoard);
 		
+		System.out.println("Thank you for playing tictactoe");
+		System.out.println("\nDo you want to play another game");
+		String choiceToPlay = sc.nextLine();
+		if(choiceToPlay.equals("yes")) {
+			main(args);
+		}
+		sc.close();
+		
 	}
 
 }
