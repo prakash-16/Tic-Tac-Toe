@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class TicTacToeRunner {
 
 	public static void main(String[] args) {
-		int i=1;
+		int k = 1;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to tic tac toe game");
 		TicTacToeGame tictactoe = new TicTacToeGame();
 		Character[] gameBoard = tictactoe.createBoard();
-		tictactoe.toss();
 		char choiceOfUser = tictactoe.chooseLetter();
 		if (choiceOfUser == 'X') {
 			System.out.println("you have chose letter X and computer has got letter O");
@@ -22,22 +21,20 @@ public class TicTacToeRunner {
 		System.out.println("Tail");
 		String choice = sc.nextLine();
 		String tossResult = tictactoe.toss();
-		if(choice.toLowerCase().equals(tossResult.toLowerCase())) {
-			System.out.println("The result of toss is " + tossResult + " and you will go first");
-		}
-		else {
-			System.out.println("The result of toss is " + tossResult + " and you will go last");
-		}
-		while(i <= 9) {
-			boolean result = tictactoe.isIndexIsFree(gameBoard);
-			if (result == true) {
-				System.out.println("Free space is avaliable");
-				tictactoe.userMove(gameBoard);
-			} else {
-				System.out.println("Free space is not avaliable");
+		while(k <= 9) {
+			tictactoe.userMove(gameBoard);
+			boolean resultWin = tictactoe.isWin(gameBoard);
+			if(resultWin == true) {
+				break;
 			}
-			tictactoe.showBoard(gameBoard);
+			boolean resultTie = tictactoe.isTie(gameBoard);
+			if(resultTie == true) {
+				break;
+			}
+			k++;
 		}
+		tictactoe.showBoard(gameBoard);
+		
 	}
 
 }
