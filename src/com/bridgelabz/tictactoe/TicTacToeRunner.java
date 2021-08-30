@@ -76,6 +76,14 @@ public class TicTacToeRunner {
 					tictactoe.addCenter(gameBoard);
 				}
 				break;
+			}	
+			boolean checkBoardIsFull = tictactoe.isBoardFull(gameBoard);
+			if(checkBoardIsFull == true) {
+				System.out.println("Game Board is full");
+				break;
+			}
+			else {
+				continue;
 			}
 			k++;
 		}

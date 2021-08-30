@@ -159,5 +159,14 @@ public class TicTacToeGame {
 		}
 		return false;
 	}
+	
+	public boolean isBoardFull(Character[] gameBoard) {
+		for(i=1;i<=9;i++) {
+			if(gameBoard[i] == ' ') {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
