@@ -57,9 +57,21 @@ public class TicTacToeRunner {
 			if(resultTie == true) {
 				break;
 			}
-			boolean resultCheck = tictactoe.checkOpponent(gameBoard);
-			if(resultCheck == true) {
-				System.out.println("Your opponent can win");
+			boolean resultCheckComputer = tictactoe.checkOpponentComputer(gameBoard);
+			boolean resultCheckUser = tictactoe.checkOpponentUser(gameBoard);
+			if(resultCheckComputer == true && resultCheckUser == true) {
+				if(tictactoe.isIndexIsFree(gameBoard, 1)) {
+					tictactoe.userMove(gameBoard);
+				}
+				else if(tictactoe.isIndexIsFree(gameBoard, 3)) {
+					tictactoe.userMove(gameBoard);
+				}
+				else if(tictactoe.isIndexIsFree(gameBoard, 7)) {
+					tictactoe.userMove(gameBoard);
+				}
+				else if(tictactoe.isIndexIsFree(gameBoard, 9)) {
+					tictactoe.userMove(gameBoard);
+				}
 				break;
 			}
 			k++;

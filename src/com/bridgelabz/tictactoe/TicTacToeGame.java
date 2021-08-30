@@ -124,12 +124,27 @@ public class TicTacToeGame {
 		return true;
 	}
 	
-	public boolean checkOpponent(Character[] gameBoard) {
+	public boolean checkOpponentComputer(Character[] gameBoard) {
 		for(i =1;i<gameBoard.length;i++) {
 			if(gameBoard[i] == ' ') {
 				gameBoard[i] = user;
 				if(isWin(gameBoard)) {
 					userMove(gameBoard);
+					return true;
+				}
+				else {
+					gameBoard[i] = ' ';
+				}
+			}
+		}
+		return false;
+	}
+	
+	public boolean checkOpponentUser(Character[] gameBoard) {
+		for(i =1;i<gameBoard.length;i++) {
+			if(gameBoard[i] == ' ') {
+				gameBoard[i] = user;
+				if(isWin(gameBoard)) {
 					return true;
 				}
 				else {
