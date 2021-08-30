@@ -64,6 +64,17 @@ public class TicTacToeGame {
 		gameBoard[position] = user;
 	}
 
+	public void computerMove(Character[] gameBoard) {
+		while (true) {
+			position = (int) Math.floor(Math.random()*(9-1+1)+1);
+			System.out.println(position);
+			if (this.isIndexIsFree(gameBoard, position) == true) {
+				break;
+			}
+		}
+		gameBoard[position] = computer;
+	}
+
 	public String toss() {
 		int tossResult = (int) Math.floor(Math.random() * 10) % 2;
 		if (tossResult == 1) {

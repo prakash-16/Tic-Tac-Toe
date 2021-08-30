@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TicTacToeRunner {
 
 	public static void main(String[] args) {
-		int k = 1;
+		int i = 0,j = 0,k = 1;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to tic tac toe game");
 		TicTacToeGame tictactoe = new TicTacToeGame();
@@ -21,8 +21,34 @@ public class TicTacToeRunner {
 		System.out.println("Tail");
 		String choice = sc.nextLine();
 		String tossResult = tictactoe.toss();
-		while(k <= 9) {
+		if(choice.toLowerCase().equals(tossResult.toLowerCase())) {
+			System.out.println("The result of toss is " + tossResult + " and you will go first");
 			tictactoe.userMove(gameBoard);
+			i++;
+		}
+		else {
+			System.out.println("The result of toss is " + tossResult + " and you will go last");
+			tictactoe.computerMove(gameBoard);
+			j = j + 2;
+		}
+		while(k <= 9) {
+			if(i > 0) {
+				switch(1) {
+				case 1:
+					tictactoe.computerMove(gameBoard);
+				case 2:
+					tictactoe.userMove(gameBoard);
+				}
+				
+			}
+			if(j > 1) {
+				switch(1) {
+				case 1:
+					tictactoe.userMove(gameBoard);
+				case 2:
+					tictactoe.computerMove(gameBoard);
+				}
+			}
 			boolean resultWin = tictactoe.isWin(gameBoard);
 			if(resultWin == true) {
 				break;
